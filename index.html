@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>wb_sdk</title>
+</head>
+
+<body>
+  <script src="./dist/bundle-sdk.js"></script>
+  <script>
+    const sdk = new JYFSDK({
+      secret: '1234567890abcdef',
+      aesKey: '1234567890abcdef', // 可用 128-bit key，或与 secret 共用
+    });
+    const encryptedPayload = sdk.track('page_view', {
+      uid: 'user_123',
+      location: '/home',
+      ts: Date.now()
+    });
+  </script>
+</body>
+
+</html>
